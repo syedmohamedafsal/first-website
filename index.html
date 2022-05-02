@@ -1,0 +1,767 @@
+<!doctype html>
+    <html>
+        <head>
+            <title>mr.sma</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+            <style>
+                body{
+                    background-color:lightgray; 
+                    background-image: url(./dam1.jpg);
+                    background-repeat: no-repeat;
+                    background-position:center;
+                    height: 100vh;
+                    background-size: cover;
+                    width:100%;
+                }
+                .header{
+                    height: 33px;
+                    width: 99%;
+                    background-color:lightblue;
+                    position: relative;
+                    border-radius: 80px;
+                }
+                .header::before{
+                    content: '';
+                    position: relative;
+                    left: -5px;
+                    top: -3px;
+                    height: 39px;
+                    width: 1333px;
+                    position:absolute;
+                    background: linear-gradient(
+                        #00ff66,#00ffff,#ff00ff,#ff0099,#099fff
+                    );
+                    z-index: -1;
+                    border-radius: 20px;
+                    animation: change 20s linear infinite;
+                }
+                @keyframes change{
+                    0%{
+                        background-position: 0 0;
+                    }
+                    50%{
+                        background-position: 400px 400px;
+                    }
+                    100%{
+                        background-position: 0 0;
+                    }
+                }
+                 .logo{
+                    text-transform: uppercase;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                    font-style:italic;
+                    font-size: 1.2rem;
+                    margin: 10px;
+                    position: relative;
+                    top: 5px;
+                    left: 5px;
+                    text-align: center;
+                }
+                ul li{ 
+                    text-transform: capitalize;
+                    font-size: 1rem;
+                    display:inline;
+                    padding: 2px 5px;
+                    position: relative;
+                    left:900px;
+                    top: -31px;
+                    content: '';
+                    height: 100px;
+                    width: 100px;
+                    margin: 15px 15px;
+                    border: 2px solid gray;
+                    border-radius:80px;
+                    color: black;
+                    cursor: pointer;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+                ul li:hover{
+                    background-color: gray;
+                    color: #fff;
+                }
+                .my{
+                    width: 450px;
+                    height: 550px;
+                    position: absolute;
+                    top: 100px;
+                    left: 450px;
+                    border-radius: 50px;
+                }
+                .h-name{
+                    position: absolute;
+                    left: 500px;
+                    top: 580px;
+                    text-transform: uppercase;
+                    color: #fff;
+                }
+                @media screen and (max-width:700px){
+                    body{
+                        width: 100%;
+                        background-size: cover;
+                    }
+                    .header{
+                        width:454px;
+                    }
+                    .header::before{
+                        width: 462px;
+                    }
+                    .logo{
+                        position: relative;
+                        left:10px;
+                        top: 8px;
+                        font-size: 15px;
+                    }
+                    ul li{
+                        position: relative;
+                        left: 135px;
+                        top: -27px;
+                        margin: 0px 15px;
+                        font-size: 13px; 
+                    }
+                    .my{
+                        position: absolute;
+                        left: 80px;
+                        top: 150px;
+                        width: 350px;
+                        height: 400px;
+                    }
+                    .h-name{
+                        position: absolute;
+                        left: 130px;
+                        top: 500px;
+                        font-size:17px;
+                    }
+                }
+                .about{
+                    height: 88vh;
+                    width: 96vw;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-size: 22px;
+                    position: absolute;
+                    top: 770px;
+                    padding-top: 20px;
+                    left: 10px;
+                    font-weight: 800;
+                    border: 2px solid gray;
+                    border-radius: 20px;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                }
+                .my-2{
+                    width: 400px;
+                    height: 400px;
+                    position: relative;
+                    bottom: -810px;
+                    left: 457px;
+                    border-radius: 50px;
+                }
+                .back{
+                    content: '';
+                    height: 400px;
+                    width: 399px;
+                    background:linear-gradient(#00ffff,#00ff66);
+                    position: absolute;
+                    top: 857px;
+                    border-radius:50px;
+                    left: 460px;
+                }
+                .dob{
+                    position: absolute;
+                    bottom: -350px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size:27px;
+                    left:80px;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                }
+                .dob::after{
+                    content: '';
+                    left: 10px;
+                    margin-right: -30px;
+                    height: 1px;
+                    right:10%;
+                    background-color: #ff0067;
+                    bottom: 0;
+                    cursor: pointer;
+                    position: absolute;
+                }
+                .dob:hover{
+                    margin-left: 50px;
+                }
+                .mrg{
+                    padding: 10px;
+                    position: absolute;
+                    text-transform: capitalize;
+                    bottom: -340px;
+                    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 27px;
+                    left:950px;
+                    text-align: center;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+                .mrg::before{
+                    content: '';
+                    left: 10px;
+                    margin-right: -40px;
+                    height: 1px;
+                    right:15%;
+                    background-color: #ff0067;
+                    bottom: 0px;
+                    cursor: pointer;
+                    position:absolute;
+                }
+                .mrg::after{
+                    position: absolute;
+                    top: 10px;
+                    left: 50px;
+                }
+                .mrg:hover{
+                    margin-left:50px;
+                }
+                .dev{
+                    padding: 10px;
+                    position: absolute;
+                    text-transform: capitalize;
+                    bottom: -480px;
+                    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 27px;
+                    left: 70px;
+                    font-weight:400;
+                }
+                .dev::before{
+                    content: '';
+                    left: 10px;
+                    margin-right: -40px;
+                    height: 1px;
+                    right:11%;
+                    background-color: #ff0067;
+                    bottom: 0;
+                    position:absolute; 
+                }
+                .dev:hover{
+                    margin-left: 50px;
+                }
+                .age{
+                    position: absolute;
+                    bottom: -480px;
+                    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 26px;
+                    text-transform: capitalize;
+                    left: 960px;
+                    padding: 10px;
+                }
+                .age::before{
+                    content: '';
+                    left: 10px;
+                    margin-right: -28px;
+                    height: 1px;
+                    right:15%;
+                    background-color: #ff0067;
+                    bottom: 0;
+                    display: flex;
+                    justify-content: space-evenly;
+                    position:absolute;
+                }
+                .age:hover{
+                    margin-left: 50px;
+                }
+                .clg{
+                    padding: 10px;
+                    position: absolute;
+                    color: #000;
+                    bottom: -600px;
+                    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 25px;
+                    left: 70px;
+                    cursor: pointer;
+                }
+                .clg::before{
+                    content: '';
+                    left: 10px;
+                    margin-right: -40px;
+                    height: 1px;
+                    right:29%;
+                    background-color: #ff0067;
+                    bottom: 0;
+                    position:absolute;
+                
+                }
+                .clg:hover{
+                    margin-left: 50px;
+                }
+                .sit{
+                    color: #000;
+                    cursor: pointer;
+                }
+                a{
+                    text-decoration: none;
+                    color: #000;
+
+                }
+                a:hover{
+                    color: #fff;
+                }
+                .branch{
+                    padding: 10px;
+                    position: absolute;
+                    bottom: -600px;
+                    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 25px;
+                    left: 960px;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+                .branch::before{
+                    position: absolute;
+                    content: '';
+                    margin-right: -20px;
+                    height: 1px;
+                    left: 10px;
+                    right: 10%;
+                    bottom: 0;
+                    background-color: #ff0067;   
+                }
+                .branch:hover{
+                    margin-left: 50px;
+                }
+                @media screen and (max-width:700px) {
+                    .about{
+                        font-size: 20px;
+                        font-weight: 400px;
+                        position: absolute;
+                        top: 780px;
+                        left: 10px;
+                        height:84vh;
+                        width: 95vw;
+                        padding-top: 40px;
+                    }
+                    .my-2{
+                        position: relative;
+                        left: 95px;
+                        top: 830px;
+                        height:240px;
+                        width:240px;
+                    }
+                    .back{
+                        position: absolute;
+                        left: 100px;
+                        top: 874px;
+                        height: 240px;
+                        width: 240px;
+                    }
+                    .dob{
+                        font-size:16px;
+                        position: absolute;
+                        left: 20px;
+                        top: 1125px;
+                    }
+                    .dob::after{
+                        position:absolute;
+                        left: 10px;
+                        bottom: -12px;
+                        width: 165px;
+                    }
+                    .mrg{
+                        font-size:16px;
+                        position: absolute;
+                        left: 210px;
+                        top: 1125px;
+                    }
+                    .mrg::after,.mrg::before{
+                        position:absolute;
+                        left: 10px;
+                        bottom: -12px;
+                        width: 137px;
+                    }
+                    .dev{
+                        position:absolute;
+                        font-size: 16px;
+                        top: 1190px;
+                        left: 105px;
+                    } 
+                    .dev::before{
+                        position: absolute;
+                        left: 10px;
+                        width: 200px;
+                        top: 31px;
+                    }
+                    .age{
+                        position: absolute;
+                        left:20px;
+                        font-size: 16px;
+                        top: 1245px;
+                    }
+                    .age::before{
+                        position: absolute;
+                        left: 10px;
+                        width: 90px;
+                        top: 31px;
+                    }
+                    .clg{
+                        position: absolute;
+                        font-size: 16px;
+                        top: 1245px;
+                        left:210px;
+                    }
+                    .clg::before{
+                        position: absolute;
+                        left: 10px;
+                        width: 85px;
+                        top: 31px;
+                    }
+                    .branch{
+                        position: absolute;
+                        font-size: 16px;
+                        left: 110px;
+                        top: 1295px;
+                    }
+                    .branch::before{
+                        position: absolute;
+                        width: 140px;
+                        top: 31px;
+                        left: 10px;
+                    }
+                }
+                .contact{
+                    font-size:28px;
+                    text-transform: uppercase;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                    position:absolute;
+                    top: 1420px;
+                    left: 10px;
+                    padding-top: 20PX;
+                    border: 2px solid gray;
+                    border-radius: 20px;
+                    text-align: center;
+                    height: 105vh;
+                    width: 96VW;
+                }
+                .my-3{
+                    width: 460px;
+                    height: 560px;
+                    position: relative;
+                    bottom: -1040px;
+                    left: 430px;
+                    border-radius: 50px;
+                }
+                .img-3{
+                    height: 565px; width: 463px;
+                    background: linear-gradient(rgb(236, 221, 12),brown);
+                    position: absolute;
+                    left: 440px;
+                    border-radius: 50px;
+                    top: 1480px;
+                }
+                .total{
+                    font-size: 25px;
+                    color: #000;
+                    list-style: none;
+                }
+                .gmail{
+                    font-size: 22px;
+                    position: absolute;
+                    top: 1610px;
+                    left: 140px;
+                    color: #000;
+                    padding-top: 20px;
+                    cursor:pointer;
+                    text-transform: uppercase;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                }
+                .gmail:hover{
+                    color: #bb001b;
+                    transform:rotate(360deg);
+                }
+                .fa-envelope{
+                    font-size:40px;
+                    position: relative;
+                    left: 63px;
+                    color:transparent;
+                    top:-30px;
+                    height: 50px;
+                    width: 50px;
+                    padding-top:20px;
+                    transition: 1s;
+                }
+                .fa-envelope:hover{
+                    color: #bb001b;
+                    font-size:45px;
+                }
+                .insta{
+                    text-transform: uppercase;
+                    cursor:pointer;
+                    font-size: 21px;
+                    position: absolute;
+                    top: 1608px;
+                    left: 1000px;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                }
+                .insta:hover{
+                    color: #cd486b;
+                }
+                .fa-instagram{
+                    font-size:25px;
+                    position: relative;
+                    left: 37px;
+                    color:transparent;
+                    top:-10px;
+                    height: 50px;
+                    width: 50px;
+                    transition: 1s;
+                }
+                .fa-instagram:hover{
+                    color:#cd486b;
+                    font-size: 45px;
+                }
+                .what{
+                    text-transform: uppercase;
+                    cursor:pointer;
+                    font-size: 22px;
+                    position: absolute;
+                    top: 1800px;
+                    left: 1000px;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                }
+                .what:hover{
+                    color: rgb(2, 177, 2);
+                }
+                .fa-whatsapp{
+                    font-size:35px;
+                    position: relative;
+                    left: 45px;
+                    color:transparent;
+                    top:-10px;
+                    height: 50px;
+                    width: 50px;
+                    transition: 1s;
+                }
+                .fa-whatsapp:hover{
+                    color: rgb(2, 177, 2);
+                    font-size: 40px;
+                }
+                .tele{
+                    text-transform: uppercase;
+                    cursor:pointer;
+                    font-size: 22px;
+                    position: absolute;
+                    top: 1800px;
+                    left: 155px;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                }
+                .tele:hover{
+                    color: #099fff;
+                }
+                .fa-telegram{
+                    font-size:35px;
+                    position: relative;
+                    left: 40px;
+                    color:transparent;
+                    top:-10px;
+                    transition: 1s;
+                    height: 50px;
+                    width: 50px;
+                }
+                .fa-telegram:hover{
+                    color: #099fff;
+                    font-size: 40px;
+                }
+                .twitter{
+                    text-transform: uppercase;
+                    cursor:pointer;
+                    transform: scale(1) rotate(10deg,25deg);
+                    font-size:22px ;
+                    position: absolute;
+                    top: 2060px;
+                    left: 620px;
+                    font-family:Georgia, 'Times New Roman', Times, serif;  
+                }
+                .twitter:hover{
+                    color: #1DA1F2;
+                }
+                .fa-twitter{
+                    font-size:35px;
+                    position: relative;
+                    left: 30px;
+                    color:transparent;
+                    top:-5px;
+                    transition: 1s;
+                }
+                .fa-twitter:hover{
+                    font-size: 40px;
+                    color: #1DA1F2;
+                }
+                @media screen and (max-width:700px){
+                    .contact{
+                        position: absolute;
+                        font-size: 20px;
+                        top: 1500px;
+                        width: 95vw;
+                        height: 68vh;
+                    }
+                    .my-3{
+                        width: 145px;
+                        height: 205px;
+                        position: absolute;
+                        top: 1655px;
+                        left: 130px;
+                    }
+                    .img-3{
+                        height: 210px;
+                        width: 149px;
+                        position: absolute;
+                        left: 129px;
+                        top: 1650px;
+                    }
+                    .gmail{
+                        font-size: 13px;
+                        position: absolute;
+                        left: -20px;
+                        top: 1620px;
+                    }
+                    .fa-envelope{
+                        font-size: 20px;
+                    }
+                    .fa-envelope:hover{
+                        font-size: 23px;
+                    }
+                    .what{
+                        font-size: 13px;
+                        position: absolute;
+                        left: 300px;
+                        top: 1810px;
+                    }
+                    .fa-whatsapp{
+                        font-size: 20px;
+                        left: 27px;
+                        top:-23px ;
+                        position: absolute;
+                    }
+                    .fa-whatsapp:hover{
+                        font-size: 23px;
+                    }
+                    .insta{
+                        font-size: 13px;
+                        position: absolute;
+                        left: 300px;
+                        top: 1640px;
+                    }
+                    .fa-instagram{
+                        font-size: 20px;
+                        left: 28px;
+                        top:-20px ;
+                        position: absolute;
+                    }
+                    .fa-instagram:hover{
+                        font-size: 23px;
+                    }
+                    .tele{
+                        font-size: 13px;
+                        position: absolute;
+                        left: 30px;
+                        top: 1820px;
+                    }
+                    .fa-telegram{
+                        font-size: 20px;
+                        left: 25px;
+                        top: -23px;
+                        position: absolute;
+                    }
+                    .fa-telegram:hover{
+                        font-size: 23px;
+                    }
+                    .twitter{      
+                        font-size: 13px;
+                        position: absolute;
+                        left: 170px;
+                        top: 1910px;
+                    }
+                    .fa-twitter{
+                        font-size: 20px;
+                        left: 20px;
+                        top: -18px;
+                        position: absolute;
+                    }
+                    .fa-twitter:hover{
+                        font-size: 23px;
+                    }
+                }
+                .rights{
+                    text-transform: uppercase;
+                    font-size: 20px;
+                    color: #fff;
+                    background-color: #000;
+                    position: absolute;
+                    bottom: -1550px;
+                    padding: 0px 570px;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                }
+                @media screen and (max-width:700px) {
+                    .rights{
+                        font-size:13px;
+                        padding: 0px 100px;
+                        position: relative;
+                        top: 1690px;
+                        text-align: center;
+                    }
+                }
+            </style>
+        </head> 
+            <body>
+                <div class="header" >
+                    <span class="logo" id="home">MR.SMA</span>
+                        <ul>
+                          <li><a href="#home">home</a></li>
+                          <li><a href="#about">about me</a></li>
+                          <li><a href="#contact">contact</a></li>
+                        </ul>
+                    <img src="./my pro.jpeg" alt="my ims" class="my"> 
+                    <h2 class="h-name">i am n.syed mohamed afsal</h2>
+                </div>
+                    <div class="middle">
+                        <span class="about" id="about">about me</span>
+                        <div class="back"></div>
+                        <img src="./about.jpeg" alt="about" class="my-2">
+                        <div class="words">
+                            <div class="dob">
+                              <label>Birthday:</label>
+                              <span>22th dec 2002</span> <br>  
+                            </div>
+                            <div class="mrg">
+                              <label>Marital Status:</label>
+                              <span>Single</span>  <br>                   
+                            </div>
+                            <div class="dev">
+                              <label >Developer:</label>
+                              <span>Juinior Developer</span> <br>
+                            </div>
+                            <div class="age">
+                              <label>Age:</label>
+                              <span>18 years</span><br>
+                            </div>
+                            <div class="clg">
+                              <label>Collage:</label>
+                              <a href="http://sethu.ac.in/"><span class="sit">SIT</a></span><br>
+                            </div>
+                            <div class="branch">
+                              <label>Branch:</label>
+                              <span>CSE 1st year</span>
+                            </div>
+                        </div>
+                    </div>           
+                    <div class="footer">
+                        <span class="contact" id="contact">contact</span>
+                        <div class="img-3"></div>
+                        <img src="./my con.jpg" class="my-3">
+                        <div class="total">
+                          <li class="gmail"><a href="mailto:rajasyedmohamedafsal@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a><span>Gmail</span><br></li>      
+                          <li class="tele"><a href="https://msng.link/o/? 9150368338=tg"><i class="fa fa-telegram" aria-hidden="true"></i></a><br><span>telegram</span></li>
+                          <li class="insta"><a href="https://www.instagram.com/just_a_pshyo_coder?r=nametag"><i class="fa fa-instagram" aria-hidden="true"></i></a><br><span>instagram</span></li>
+                          <li class="twitter"><a href="https://twitter.com/Syedmohamedafs1?s=08"><i class="fa fa-twitter" aria-hidden="true"></i></a><br><span>twitter</span></li>
+                          <li class="what"><a href="https://wa.me/+918220360923"><i class="fa fa-whatsapp" aria-hidden="true"></i><br></a><span>whatsapp</span></li>
+                        </div>
+                    </div>
+                    <p class="rights">copyright@2021</p>
+            </body>
+    </html>
